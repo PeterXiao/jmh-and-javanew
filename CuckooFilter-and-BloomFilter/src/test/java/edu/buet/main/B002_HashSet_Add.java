@@ -19,8 +19,8 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import com.carrotsearch.hppc.XorShift128P;
 
 @Fork(1)
-@Warmup(iterations = 5)
-@Measurement(iterations = 5)
+@Warmup(iterations = 3)
+@Measurement(iterations = 3)
 @State(Scope.Benchmark)
 public class B002_HashSet_Add {
 	public static interface Ops {

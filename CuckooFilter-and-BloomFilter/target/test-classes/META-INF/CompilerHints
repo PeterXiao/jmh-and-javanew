@@ -23,3 +23,4 @@ inline,edu/buet/main/B004_HashSet_CollisionAvalanche.prepareDelegate
 inline,edu/buet/main/B004_HashSet_CollisionAvalanche.run
 inline,edu/buet/main/FastUtilTypeSpecificBenchmarkUnitTest.givenCollectionsHashSetWithInitialSizeSet_whenPopulated_checkTimeTaken
 inline,edu/buet/main/FastUtilTypeSpecificBenchmarkUnitTest.givenFastUtilsIntSetWithInitialSizeSet_whenPopulated_checkTimeTaken
+inline,jvm/B001_HashSet.init
