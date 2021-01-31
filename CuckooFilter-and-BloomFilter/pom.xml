@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-		<!--  1.8 -->
+		<!-- 1.8 11 14 15 16 -->
 		<jdk.version>11</jdk.version>
 		<maven.compiler.target>${jdk.version}</maven.compiler.target>
 		<maven.compiler.source>${jdk.version}</maven.compiler.source>
@@ -24,7 +24,7 @@
 			<artifactId>hppc</artifactId>
 			<version>0.8.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.carrotsearch.randomizedtesting/randomizedtesting-runner  -->
+		<!-- https://mvnrepository.com/artifact/com.carrotsearch.randomizedtesting/randomizedtesting-runner -->
 		<dependency>
 			<groupId>com.carrotsearch.randomizedtesting</groupId>
 			<artifactId>randomizedtesting-runner</artifactId>
@@ -52,6 +52,18 @@
 			<groupId>it.unimi.dsi</groupId>
 			<artifactId>dsiutils</artifactId>
 			<version>2.6.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20200518</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.73</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.openjdk.jmh/jmh-core -->
@@ -86,7 +98,28 @@
 			<artifactId>eclipse-collections</artifactId>
 			<version>10.2.0</version>
 		</dependency>
-		<!-- <dependency> <groupId>com.github.JCTools.JCTools</groupId> <artifactId>jctools-core</artifactId>
+		<dependency>
+			<groupId>org.eclipse.collections</groupId>
+			<artifactId>eclipse-collections-testutils</artifactId>
+			<version>10.2.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-core</artifactId>
+
+		</dependency>
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.collections</groupId>
+			<artifactId>eclipse-collections-forkjoin</artifactId>
+			<version>10.2.0</version>
+		</dependency>
+		<!-- <dependency> <groupId>com.github.JCTools.JCTools</groupId> <artifactId>jctools-core</artifactId> 
 			<version>v3.0.0</version> </dependency> -->
 		<dependency>
 			<groupId>one.util</groupId>
@@ -94,7 +127,7 @@
 			<version>0.7.2</version>
 		</dependency>
 
-		<!-- <dependency> <groupId>net.openhft</groupId> <artifactId>koloboke-impl-jdk6-7</artifactId>
+		<!-- <dependency> <groupId>net.openhft</groupId> <artifactId>koloboke-impl-jdk6-7</artifactId> 
 			<version>${version.koloboke}</version> </dependency> -->
 		<!-- https://mvnrepository.com/artifact/com.koloboke/koloboke-impl-jdk8 -->
 		<dependency>
@@ -125,11 +158,11 @@
 			<artifactId>jol-core</artifactId>
 			<version>0.10</version>
 		</dependency>
-        <dependency>
-            <groupId>org.jctools</groupId>
-            <artifactId>jctools-core</artifactId>
-            <version>3.0.0</version>
-        </dependency>
+		<dependency>
+			<groupId>org.jctools</groupId>
+			<artifactId>jctools-core</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<pluginManagement>
@@ -153,7 +186,17 @@
 		</pluginManagement>
 	</build>
 
-
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.projectreactor</groupId>
+				<artifactId>reactor-bom</artifactId>
+				<version>Bismuth-RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 
 </project>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.biezhi</groupId>
-    <artifactId>java11-highperformance-examples</artifactId>
-    <version>1.0-SNAPSHOT</version>
+	<groupId>io.github.biezhi</groupId>
+	<artifactId>java11-highperformance-examples</artifactId>
+	<version>1.0-SNAPSHOT</version>
 	<properties>
 		<!-- <jdk.version>14 15 16</jdk.version> -->
 		<jdk.version>11</jdk.version>
@@ -15,58 +15,87 @@
 		<maven.compiler.target>${jdk.version}</maven.compiler.target>
 		<maven.compiler.source>${jdk.version}</maven.compiler.source>
 	</properties>
-    <dependencies>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.6</version>
-        </dependency>
+	<dependencies>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.6</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.lmax/disruptor -->
-	<dependency>
-		<groupId>com.lmax</groupId>
-		<artifactId>disruptor</artifactId>
-		<version>3.4.2</version>
-	</dependency>
-    <dependency>
-        <groupId>com.esotericsoftware</groupId>
-        <artifactId>reflectasm</artifactId>
-        <version>1.11.9</version>
-    </dependency>
-	<!-- https://mvnrepository.com/artifact/org.agrona/agrona-agent -->
-	<dependency>
-		<groupId>org.agrona</groupId>
-		<artifactId>agrona-agent</artifactId>
-		<version>1.5.1</version>
-		<type>pom</type>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.agrona/agrona -->
-	<dependency>
-		<groupId>org.agrona</groupId>
-		<artifactId>agrona</artifactId>
-		<version>1.5.1</version>
-		<type>pom</type>
-	</dependency>
-    </dependencies>
+		<dependency>
+			<groupId>com.lmax</groupId>
+			<artifactId>disruptor</artifactId>
+			<version>3.4.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.esotericsoftware</groupId>
+			<artifactId>reflectasm</artifactId>
+			<version>1.11.9</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.agrona/agrona-agent -->
+		<dependency>
+			<groupId>org.agrona</groupId>
+			<artifactId>agrona-agent</artifactId>
+			<version>1.5.1</version>
+			<type>pom</type>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.agrona/agrona -->
+		<dependency>
+			<groupId>org.agrona</groupId>
+			<artifactId>agrona</artifactId>
+			<version>1.5.1</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>com.conversantmedia</groupId>
+			<artifactId>disruptor</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+		<dependency>
+			<groupId>com.pivovarit</groupId>
+			<artifactId>parallel-collectors</artifactId>
+			<version>2.3.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.immutables/value -->
+		<dependency>
+			<groupId>org.immutables</groupId>
+			<artifactId>value</artifactId>
+			<version>2.8.8</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.houbb</groupId>
+			<artifactId>junitperf</artifactId>
+			<version>2.0.7</version>
+		</dependency>
+	</dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <release>${jdk.version}</release>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
-                <configuration>
-                    <argLine>--add-modules=jdk.incubator.httpclient</argLine>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<release>${jdk.version}</release>
+					<compilerArgs>
+						<arg>-verbose</arg>
+						<arg>-XprintRounds</arg>
+						<arg>-XprintProcessorInfo</arg>
+						<arg>-Xlint</arg>
+						<arg>-J-verbose</arg>
+					</compilerArgs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<argLine>--add-modules=jdk.incubator.httpclient</argLine>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

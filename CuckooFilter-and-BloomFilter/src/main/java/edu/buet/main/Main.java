@@ -13,7 +13,7 @@ public class Main {
 	runTest(10);
 	runTest(100);
 	runTest(1000);
-	// runTest(10000);
+    // runTest(10000);
 
     }
 

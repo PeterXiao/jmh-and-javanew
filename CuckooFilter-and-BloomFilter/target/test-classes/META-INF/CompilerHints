@@ -3,6 +3,8 @@ dontinline,*.*_avgt_jmhStub
 dontinline,*.*_sample_jmhStub
 dontinline,*.*_ss_jmhStub
 dontinline,*.*_thrpt_jmhStub
+inline,com/bench/ThreadPoolPerformance.ThreadPerformanceTest
+inline,com/bench/ThreadPoolPerformance.ThreadPoolPerformanceTest
 inline,com/bloom/AlibabaHashMapTest.noSizeTest
 inline,com/bloom/AlibabaHashMapTest.setSizeTest
 inline,com/bloom/Bench$BenchmarkState.setup
@@ -23,4 +25,11 @@ inline,edu/buet/main/B004_HashSet_CollisionAvalanche.prepareDelegate
 inline,edu/buet/main/B004_HashSet_CollisionAvalanche.run
 inline,edu/buet/main/FastUtilTypeSpecificBenchmarkUnitTest.givenCollectionsHashSetWithInitialSizeSet_whenPopulated_checkTimeTaken
 inline,edu/buet/main/FastUtilTypeSpecificBenchmarkUnitTest.givenFastUtilsIntSetWithInitialSizeSet_whenPopulated_checkTimeTaken
+inline,edu/buet/main/StringInternBenchMark.setup
+inline,edu/buet/main/StringInternBenchMark.useCurrentHashMap
+inline,edu/buet/main/StringInternBenchMark.useHashMap
+inline,edu/buet/main/StringInternBenchMark.useIntern
 inline,jvm/B001_HashSet.init
+inline,jvm/BranchPredictionTest.countSortedArr
+inline,jvm/BranchPredictionTest.countUnsortedArr
+inline,jvm/BranchPredictionTest.init
