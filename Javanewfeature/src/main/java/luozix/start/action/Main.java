@@ -22,6 +22,26 @@ Java语言提供了八种基本类型。六种数字类型（四个整数型，�
  *
  *
  *
+Java修饰符
+像其他语言一样，Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：
+
+*访问控制修饰符 : default, public , protected, private
+*非访问控制修饰符 : final, abstract, static, synchronized
+
+ Java 变量
+Java 中主要有如下几种类型的变量
+*局部变量
+*类变量（静态变量）
+*成员变量（非静态变量）
+*
+*
+ Java 数组
+数组是储存在堆上的对象，可以保存多个同类型变量。
+ 
+Java 枚举
+Java 5.0引入了枚举，枚举限制变量只能是预先设定好的值。使用枚举可以减少代码中的 bug。
+ 
+ *
  */
 public class Main {
 
