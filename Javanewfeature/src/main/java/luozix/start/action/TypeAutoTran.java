@@ -36,8 +36,15 @@ public class TypeAutoTran {
 		double pi = 3.14159; // 声明了双精度浮点型变量 pi
 		char x1 = 'x'; // 声明变量 x 的值是字符 'x'。
 
+		TypeAutoTran test = new TypeAutoTran();
+		TypeAutoTran.pupAge();
 	}
 
+	public static void pupAge() {
+		int age = 0;
+		age = age + 7;
+		System.out.println("小狗的年龄是: " + age);
+	}
 }
 /*
  * 
