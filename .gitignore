@@ -21,3 +21,15 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/Javanewfeature/*.classpath
+/Javanewfeature/*.gitignore
+/Javanewfeature/*.project
+/Javanewfeature/.settings/*.prefs
+/Javanewfeature/*.factorypath
+.idea
+java-8-lambdas-exercise/.classpath
+java-8-lambdas-exercise/.project
+java-8-lambdas-exercise/.settings/org.eclipse.jdt.apt.core.prefs
+*.prefs
+Java_11_error/bin/.project
+/Java_11_error/lib/C-master/data_structures/dictionary/*.c
