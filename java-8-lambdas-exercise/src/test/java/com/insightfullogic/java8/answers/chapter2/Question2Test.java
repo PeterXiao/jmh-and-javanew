@@ -15,7 +15,8 @@ public class Question2Test {
         cal.set(Calendar.MONTH, Calendar.JANUARY);
         cal.set(Calendar.DAY_OF_MONTH, 1);
         String formatted = Question2.formatter.get().getFormat().format(cal.getTime());
-        assertEquals("01-Jan-1970", formatted);
+        //assertEquals("01-Jan-1970", formatted);
+        assertEquals("01-一月-1970", formatted);
     }
 
 }
