@@ -1,0 +1,11 @@
+language: java
+jdk:
+  - openjdk8
+
+# whitelist
+branches:
+  only:
+    - master
+
+after_success:
+- mvn jacoco:report coveralls:report -pl jctools-core
