@@ -1,9 +1,9 @@
 package org.mvnsearch;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * regex test
@@ -19,6 +19,7 @@ public class RegexTest {
         //find result
         Predicate<String> predicate = Pattern.compile("aaa").asPredicate();
         System.out.println("match predicate");
+
         System.out.println(matchPredicate.test("aaa"));
         System.out.println(matchPredicate.test("baaab"));
         System.out.println("predicate");
