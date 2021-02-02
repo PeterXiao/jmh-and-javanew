@@ -1,3 +1,11 @@
-[Java11教程](https://gaowenhao.cn)示例代码
 
-欢迎来我的博客学习:gaowenhao.cn
+-Xms512m
+-Xmx2048m
+-XX:MaxMetaspaceSize=256m
+-XX:+UseG1GC
+-XX:+UseStringDeduplication
+-XX:+ScavengeBeforeFullGC
+-XX:ParallelGCThreads=2
+-XX:ConcGCThreads=1
+-XX:+ExitOnOutOfMemoryError
+-Djava.net.preferIPv4Stack=true

@@ -12,8 +12,8 @@
 	<name>java11_in_action</name>
 
 	<properties>
-	<!-- 11 -->
-	    <java.version>15</java.version>
+		<!-- 11 -->
+		<java.version>15</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
@@ -105,6 +105,9 @@
 					<target>${java.version}</target>
 					<release>${java.version}</release>
 					<parameters>true</parameters>
+					<compilerArgs>
+						--enable-preview
+					</compilerArgs>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -123,10 +126,16 @@
 				<version>2.22.0</version>
 				<configuration>
 					<argLine>
-						--illegal-access=permit
+						--illegal-access=permit --enable-preview
 					</argLine>
 				</configuration>
 			</plugin>
+    <!-- 			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<configuration>
+					<argLine>- -enable-preview</argLine>
+				</configuration>
+			</plugin> -->
 		</plugins>
 	</build>
 
