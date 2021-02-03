@@ -18,4 +18,30 @@
 	K：和hh差不多，表示一天12小时制(0-11)
 	z：表示时区
 	
-当需要对字符串对象的长度进行变化时，用 + 拼接的性能在循环时就会慢的慢的多，实际上 + 号拼接字符串也是通过 StringBuild 或 StringBuffer 实现的，但当进行频繁的修改本身时，+ 拼接会比直接用方法拼接产生更多的中间垃圾对象，耗用更多的内存，因此更推荐使用 StringBuild	
+当需要对字符串对象的长度进行变化时，用 + 拼接的性能在循环时就会慢的慢的多，实际上 + 号拼接字符串也是通过 StringBuild 或 StringBuffer 实现的，但当进行频繁的修改本身时，+ 拼接会比直接用方法拼接产生更多的中间垃圾对象，耗用更多的内存，因此更推荐使用 StringBuild
+
+@Override
+    public BaseResponse<UserResVO> getUserByFeignBatch(@RequestBody UserReqVO userReqVO) {
+        //调用远程服务
+        OrderNoReqVO vo = new OrderNoReqVO() ;
+        vo.setReqNo(userReqVO.getReqNo());
+
+        RateLimiter limiter = RateLimiter.create(2.0) ;
+        //批量调用
+        for (int i = 0 ;i< 10 ; i++){
+            double acquire = limiter.acquire();
+            logger.debug("获取令牌成功!,消耗=" + acquire);
+            BaseResponse<OrderNoResVO> orderNo = orderServiceClient.getOrderNo(vo);
+            logger.debug("远程返回:"+JSON.toJSONString(orderNo));
+        }
+
+        UserRes userRes = new UserRes() ;
+        userRes.setUserId(123);
+        userRes.setUserName("张三");
+
+        userRes.setReqNo(userReqVO.getReqNo());
+        userRes.setCode(StatusEnum.SUCCESS.getCode());
+        userRes.setMessage("成功");
+
+        return userRes ;
+    }	
