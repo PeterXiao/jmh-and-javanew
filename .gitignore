@@ -64,3 +64,6 @@ jmh.jmh_generated.TestBenchmarks_jmhType_B3.txt
 
 surefire-reports
 /CuckooFilter-and-BloomFilter/target
+/jmh/Java15_N/.classpath
+/jmh/Java15_N/.factorypath
+/jmh/Java15_N/.project
