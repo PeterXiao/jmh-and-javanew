@@ -21,13 +21,21 @@ import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import com.google.common.cache.RemovalListener;
 import com.google.common.cache.RemovalNotification;
+
 /**
-* @ClassName: CacheLoaderTest
-* @Description: TODO(这里用一句话描述这个类的作用)
-* @author xiaoyu xiaoyulong07@outlook.com 
-* @date 2021年2月4日 下午4:14:50
-*
-*/
+ * @ClassName: CacheLoaderTest
+ * @Description: TODO(这里用一句话描述这个类的作用) Guava官网介绍说，有以下几种情况的化可以考虑使用Guava Cache:
+ * 
+ *               愿意消耗一些内存空间来提升速度
+ * 
+ *               预料到某些键会被多次查询
+ * 
+ *               缓存中存放的数据总量不会超出内存容量
+ * 
+ * @author xiaoyu xiaoyulong07@outlook.com
+ * @date 2021年2月4日 下午4:14:50
+ *
+ */
 public class CacheLoaderTest {
 	private final static Logger LOGGER = LoggerFactory.getLogger(CacheLoaderTest.class);
 	private LoadingCache<Integer, AtomicLong> loadingCache;

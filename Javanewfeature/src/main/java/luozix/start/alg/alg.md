@@ -1,3 +1,22 @@
+#  算法
+ 
+ 评价指标：
+ 
+	  1.正确性  注意近似最优化算法
+	  2.资源利用 eg: 时间 空间
+	      时间度量关注增长量级。
+ 
+算法是由单步操作组合而来。
+估算执行时间的时候，仅虚拟算法考虑大数情况下。
+
+循环不变式证明。
+
+
+归并排序分为：原址归并，复制归并。
+
+快排： 快排原地排序，最坏时间n^2,平均 nlgn
+
+
  
  
 	 Iterator<Map.Entry<String, Integer>> entryIterator = map.entrySet().iterator();
@@ -64,3 +83,41 @@
 新生代和老年代的默认比例为 1:2，也就是说新生代占用 1/3的堆内存，而老年代占用 2/3 的堆内存。
 
 可以通过参数 -XX:NewRatio=2 来设置老年代/新生代的比例。	
+
+
+long count = Stream.of(1, 2, 3, 4, 5)
+        .map(i -> i + 1)
+        .peek(System.out::println)
+        .count();
+System.out.println(count);
+
+// java 8
+// ReferencePipeline
+@Override
+public final long count() {
+    return mapToLong(e -> 1L).sum();
+}
+
+// LongPipeline
+@Override
+public final long sum() {
+    return reduce(0, Long::sum);
+}
+
+// java 11
+// ReferencePipeline
+@Override
+public final long count() {
+    return evaluate(ReduceOps.makeRefCounting());
+}
+
+// TerminalOp.makeRefCounting()
+@Override
+public  Long evaluateSequential(PipelineHelper helper,
+                                      Spliterator spliterator) {
+    if (StreamOpFlag.SIZED.isKnown(helper.getStreamAndOpFlags()))
+        return spliterator.getExactSizeIfKnown();
+    return super.evaluateSequential(helper, spliterator);
+}
+
+建议不要在使用Stream.count()终端操作时在流中添加有副作用的操作。
