@@ -60,3 +60,14 @@ java --source 11 src/main/java/org/mvnsearch/App.java
 3）工具-拥有一些定义明确的工具是一种优点；但是，仍然可以使用明显更好的工具。让团队使用最适合自己项目的方法。
 2）设计-在公司范围内对服务进行建模，并确保管理层了解高层架构。
 1）沟通-团队之间的沟通是必须的。让某人了解一切如何协同工作以及不同团队负责什么。
+
+spring mvc 典型目录
+
+	controller层: 控制url路由映射，request、session、response 的读取、写入
+	service层: 封装了 repository 层并提供服务给 controller 层，执行业务相关的逻辑
+	repository层: 封装了对数据库的调用，并处理数据库表/行和POJO之间的映射
+	model/entity层: repository 层用来把数据库表/行映射的 POJO
+一个 client request 过来，依次经过 controller -> service -> repository -> service -> controller（忽略web容器的TCP/HTTP处理），它们都是同步阻塞调用的，所以使用起来非常方便、易于理解和调试
+
+
+
