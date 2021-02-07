@@ -20,6 +20,7 @@
 		<logback.version>1.2.3</logback.version>
 		<!-- <spring.version>4.3.10.RELEASE</spring.version> -->
 		<springboot.version>2.4.2</springboot.version>
+		<org.junit.jupiter>5.7.1</org.junit.jupiter>
 	</properties>
 
 	<dependencies>
@@ -93,13 +94,13 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.3.1</version>
+			<version>${org.junit.jupiter}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-params</artifactId>
-			<version>5.3.1</version>
+			<version>${org.junit.jupiter}</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
@@ -178,6 +179,14 @@
 		</dependency>
 		<!-- <dependency> <groupId>org.jooq</groupId> <artifactId>jool-java-8</artifactId> 
 			<version>0.9.14</version> </dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/com.lmax/disruptor -->
+		<dependency>
+			<groupId>com.lmax</groupId>
+			<artifactId>disruptor</artifactId>
+			<version>3.4.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
