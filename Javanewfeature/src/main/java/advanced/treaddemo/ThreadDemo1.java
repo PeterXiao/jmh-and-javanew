@@ -17,7 +17,9 @@ public class ThreadDemo1 {
     }
 }
 
-class MyThread extends Thread {                        // 搞一个我们的类，继承Thread接口
+class MyThread extends Thread {
+	// 搞一个我们的类，继承Thread接口
+	@Override
     public void run() {                                // 需要运行的内容
         for (var i = 0; i < 100; i++) {
             System.out.print(i + "-");

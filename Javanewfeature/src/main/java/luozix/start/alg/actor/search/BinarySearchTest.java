@@ -53,7 +53,7 @@ public class BinarySearchTest {
 				return 0;
 			}
 			
-		} while (start < Temp);
+		} while (start <= Temp);
 //		for (int i = 0; i < alist.length; i++) {
 //
 //		}

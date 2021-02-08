@@ -68,3 +68,5 @@ surefire-reports
 /jmh/Java15_N/.factorypath
 /jmh/Java15_N/.project
 /*.pdf
+/CollectionsBench-master
+/jmh-JDK11-tokenizer-challenge-master
