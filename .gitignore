@@ -67,3 +67,4 @@ surefire-reports
 /jmh/Java15_N/.classpath
 /jmh/Java15_N/.factorypath
 /jmh/Java15_N/.project
+/*.pdf
