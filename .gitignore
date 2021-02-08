@@ -70,3 +70,4 @@ surefire-reports
 /*.pdf
 /CollectionsBench-master
 /jmh-JDK11-tokenizer-challenge-master
+/Java12-API.chm

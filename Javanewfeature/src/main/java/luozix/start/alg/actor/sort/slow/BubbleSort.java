@@ -123,4 +123,49 @@ public class BubbleSort {
 		return flag;
 
 	}
+
+	public static void BubbleSort(int[] arr) {
+
+		int temp;// 临时变量
+		for (int i = 0; i < arr.length - 1; i++) { // 表示趟数，一共arr.length-1次。
+			for (int j = arr.length - 1; j > i; j--) {
+
+				if (arr[j] < arr[j - 1]) {
+					temp = arr[j];
+					arr[j] = arr[j - 1];
+					arr[j - 1] = temp;
+				}
+			}
+		}
+	}
+//	针对问题：
+//	数据的顺序排好之后，冒泡算法仍然会继续进行下一轮的比较，直到arr.length-1次，后面的比较没有意义的。
+//
+//	方案：
+//	设置标志位flag，如果发生了交换flag设置为true；如果没有交换就设置为false。
+//	这样当一轮比较结束后如果flag仍为false，即：这一轮没有发生交换，说明数据的顺序已经排好，没有必要继续进行下去。
+	public static void BubbleSortUpdate(int[] arr) {
+
+		int temp;// 临时变量
+		boolean flag;// 是否交换的标志
+		for (int i = 0; i < arr.length - 1; i++) { // 表示趟数，一共 arr.length-1 次
+
+			// 每次遍历标志位都要先置为false，才能判断后面的元素是否发生了交换
+			flag = false;
+
+			for (int j = arr.length - 1; j > i; j--) { // 选出该趟排序的最大值往后移动
+
+				if (arr[j] < arr[j - 1]) {
+					temp = arr[j];
+					arr[j] = arr[j - 1];
+					arr[j - 1] = temp;
+					flag = true; // 只要有发生了交换，flag就置为true
+				}
+			}
+			// 判断标志位是否为false，如果为false，说明后面的元素已经有序，就直接return
+			if (!flag)
+				break;
+		}
+	}
+
 }

@@ -26,10 +26,51 @@ public class QuickSortTest {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		int[] list = { 4, 2, 7, 1, 3, 5 };
+		quickSort(list, 1, 3);
+		for (int i : list) {
+			System.out.println(i);
+		}
+		int[] lists = { 4, 2, 7, 1, 1, 3, 5 };
 	}
 
+	public static void quickSort(int a[], int l, int r) {
+		if (l >= r)
+			return;
+
+		int i = l;
+		int j = r;
+		int key = a[l];// 选择第一个数为key
+
+		while (i < j) {
+
+			while (i < j && a[j] >= key)// 从右向左找第一个小于key的值
+				j--;
+			if (i < j) {
+				a[i] = a[j];
+				i++;
+			}
+
+			while (i < j && a[i] < key)// 从左向右找第一个大于key的值
+				i++;
+
+			if (i < j) {
+				a[j] = a[i];
+				j--;
+			}
+		}
+		// i == j
+		a[i] = key;
+		quickSort(a, l, i - 1);// 递归调用
+		quickSort(a, i + 1, r);// 递归调用
+	}
 }
+
+//基本思想：（分治）
+// 平均时间复杂度：O(N*logN)
+//先从数列中取出一个数作为key值；
+//将比这个数小的数全部放在它的左边，大于或等于它的数全部放在它的右边；
+//对左右两个小数列重复第二步，直至各区间只有1个数。
 //快速排序
 //快速排序严重依赖于分区。它的运作方式如下所示。
 //
@@ -104,4 +145,25 @@ public class QuickSortTest {
 //
 //# 对轴右侧的部分递归调用quicksort
 //quicksort!(pivot_position + 1, right_index)
+//end
+
+//def quickselect!(kth_lowest_value, left_index, right_index)
+//# 当子数组只剩一个格子——即达到基准情形时，
+//# 那我们就找到所需的值了
+//if right_index - left_index <= 0
+//  return @array[left_index]
+//end
+//
+//# 将数组分成两部分，并返回分隔所用的轴的索引
+//pivot_position = partition!(left_index, right_index)
+//
+//if kth_lowest_value < pivot_position
+//  quickselect!(kth_lowest_value, left_index, pivot_position - 1)
+//elsif kth_lowest_value > pivot_position
+//  quickselect!(kth_lowest_value, pivot_position + 1, right_index)
+//else # 至此kth_lowest_value只会等于pivot_position
+//  # 如果分区后返回的轴的索引等于kth_lowest_value，
+//  # 那这个轴就是我们要找的值
+//  return @array[pivot_position]
+//end
 //end
