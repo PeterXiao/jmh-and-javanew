@@ -42,7 +42,8 @@ public class BinarySearchTest {
 			 if (alist[Temp]==state) {
 				return Temp;
 			}else if (alist[Temp] >state) {
-				Temp = (Temp+start)/2; 
+				// 避免超出整数范围
+				Temp = (Temp - start) / 2 + start;
 				start = 0;
 			} else if (alist[Temp] < state) {
 				

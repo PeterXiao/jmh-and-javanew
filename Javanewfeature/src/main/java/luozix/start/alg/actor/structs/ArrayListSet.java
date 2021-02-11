@@ -36,7 +36,7 @@ public class ArrayListSet {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//数组是计算机科学里面最基本的数据结构，也是最基本的方法论 最基本的思维模型，解题模型
+		// 数组是计算机科学里面最基本的数据结构，也是最基本的方法论 最基本的思维模型，解题模型
 		String[] array = { "apples", "bananas", "cucumbers", "dates", "elderberries" };
 
 		for (String string : array) {

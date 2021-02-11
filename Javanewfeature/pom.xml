@@ -186,7 +186,39 @@
 			<artifactId>disruptor</artifactId>
 			<version>3.4.2</version>
 		</dependency>
+		<!-- 中英文 简繁体 -->
+		<dependency>
+			<groupId>com.luhuiguo</groupId>
+			<artifactId>chinese-utils</artifactId>
+			<version>1.0</version>
+		</dependency>
 
+		<dependency>
+			<groupId>me.tongfei</groupId>
+			<artifactId>progressbar</artifactId>
+			<version>0.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>de.cronn</groupId>
+			<artifactId>reflection-util</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.mizosoft.methanol</groupId>
+			<artifactId>methanol</artifactId>
+			<version>1.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.conversantmedia</groupId>
+			<artifactId>disruptor</artifactId>
+			<version>1.2.16</version>
+		</dependency>
 	</dependencies>
 
 	<build>

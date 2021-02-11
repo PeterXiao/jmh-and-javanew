@@ -37,6 +37,14 @@ public class ShellSort {
 		for (int i : shellsort(list, 6)) {
 			System.out.println(i);
 		}
+
+		int N = 2000;
+		Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 10);
+		ShellSort.sort(arr);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]);
+			System.out.print(' ');
+		}
 	}
 
 	public static int[] shellsort(int list[], int lenth) {
@@ -69,6 +77,21 @@ public class ShellSort {
 
 	}
 
+	public static void shellSort(int[] arr) {
+		int length = arr.length;
+		int temp;
+		for (int step = length / 2; step >= 1; step /= 2) {
+			for (int i = step; i < length; i++) {
+				temp = arr[i];
+				int j = i - step;
+				while (j >= 0 && arr[j] > temp) {
+					arr[j + step] = arr[j];
+					j -= step;
+				}
+				arr[j + step] = temp;
+			}
+		}
+	}
 	public static void shell_sort(int array[], int lenth) {
 
 		int temp = 0;
@@ -98,6 +121,22 @@ public class ShellSort {
 			}
 		}
 	}
+
+	// 核心代码---开始
+	public static void sort(Comparable[] arr) {
+		int j;
+		for (int gap = arr.length / 2; gap > 0; gap /= 2) {
+			for (int i = gap; i < arr.length; i++) {
+				Comparable tmp = arr[i];
+				for (j = i; j >= gap && tmp.compareTo(arr[j - gap]) < 0; j -= gap) {
+					arr[j] = arr[j - gap];
+				}
+				arr[j] = tmp;
+			}
+		}
+	}
+	// 核心代码---结束
+
 }
 
 

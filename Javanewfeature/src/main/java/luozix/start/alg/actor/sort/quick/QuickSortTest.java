@@ -7,6 +7,9 @@
 * @version V1.0  
 */
 package luozix.start.alg.actor.sort.quick;
+
+import java.util.Arrays;
+
 /**
 * @ClassName: QuickSortTest
 * @Description: TODO(这里用一句话描述这个类的作用)
@@ -17,53 +20,87 @@ package luozix.start.alg.actor.sort.quick;
 public class QuickSortTest {
 
 	/**
-	 * @param args
-	* @Title: main
-	* @Description: TODO(这里用一句话描述这个方法的作用)
-	* @param @param args    设定文件
-	* @return void    返回类型
-	* @throws
+	 * @throws Exception @param args @Title: main @Description:
+	 * TODO(这里用一句话描述这个方法的作用) @param @param args 设定文件 @return void 返回类型 @throws
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		int[] list = { 4, 2, 7, 1, 3, 5 };
-		quickSort(list, 1, 3);
-		for (int i : list) {
-			System.out.println(i);
-		}
+		QuickSortTest quickSortTest = new QuickSortTest();
+		// quickSortTest.sort(list);
+
+		System.out.println(Arrays.toString(quickSortTest.sort(list)));
+
 		int[] lists = { 4, 2, 7, 1, 1, 3, 5 };
 	}
 
-	public static void quickSort(int a[], int l, int r) {
-		if (l >= r)
-			return;
+	public int[] sort(int[] sourceArray) throws Exception {
+		// 对 arr 进行拷贝，不改变参数内容
+		int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
 
-		int i = l;
-		int j = r;
-		int key = a[l];// 选择第一个数为key
+		return quickSort(arr, 0, arr.length - 1);
+	}
 
-		while (i < j) {
+	private int[] quickSort(int[] arr, int left, int right) {
+		if (left < right) {
+			int partitionIndex = partition(arr, left, right);
+			quickSort(arr, left, partitionIndex - 1);
+			quickSort(arr, partitionIndex + 1, right);
+		}
+		// System.out.println(Arrays.toString(arr));
+		return arr;
+	}
 
-			while (i < j && a[j] >= key)// 从右向左找第一个小于key的值
-				j--;
-			if (i < j) {
-				a[i] = a[j];
-				i++;
-			}
-
-			while (i < j && a[i] < key)// 从左向右找第一个大于key的值
-				i++;
-
-			if (i < j) {
-				a[j] = a[i];
-				j--;
+	private int partition(int[] arr, int left, int right) {
+		// 设定基准值（pivot）
+		int pivot = left;
+		int index = pivot + 1;
+		for (int i = index; i <= right; i++) {
+			if (arr[i] < arr[pivot]) {
+				swap(arr, i, index);
+				index++;
 			}
 		}
-		// i == j
-		a[i] = key;
-		quickSort(a, l, i - 1);// 递归调用
-		quickSort(a, i + 1, r);// 递归调用
+		swap(arr, pivot, index - 1);
+		return index - 1;
 	}
+
+	private void swap(int[] arr, int i, int j) {
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+
+//	public static void quickSort(int a[], int l, int r) {
+//		if (l >= r)
+//			return;
+//
+//		int i = l;
+//		int j = r;
+//		int key = a[l];// 选择第一个数为key
+//
+//		while (i < j) {
+//
+//			while (i < j && a[j] >= key)// 从右向左找第一个小于key的值
+//				j--;
+//			if (i < j) {
+//				a[i] = a[j];
+//				i++;
+//			}
+//
+//			while (i < j && a[i] < key)// 从左向右找第一个大于key的值
+//				i++;
+//
+//			if (i < j) {
+//				a[j] = a[i];
+//				j--;
+//			}
+//		}
+//		// i == j
+//		a[i] = key;
+//		quickSort(a, l, i - 1);// 递归调用
+//		quickSort(a, i + 1, r);// 递归调用
+//	}
 }
 
 //基本思想：（分治）
