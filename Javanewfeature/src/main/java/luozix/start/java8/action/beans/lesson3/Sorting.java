@@ -20,7 +20,9 @@ import static java.util.Comparator.comparing;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
+import java.util.function.Function;
 
 public class Sorting {
 
@@ -66,6 +68,31 @@ public class Sorting {
 		// Apple{color='green', weight=155}]
 		inventory.sort(comparing(Apple::getWeight));
 		System.out.println(inventory);
+		inventory.sort(comparing(Apple::getWeight).reversed()); // 重量逆序
+		System.out.println(inventory);
+		// 比较器链
+//		inventory.sort(comparing(Apple::getWeight).reversed().thenComparing(Apple::getCountry));
+		
+		// Predicate<Apple> notRedApplePredicate = redApple.negate();
+
+		Predicate<String> nonEmptyPredicate = (String s) -> (s.isEmpty());
+		List listofStrings = new ArrayList<>();
+		for (int i = 0; i < 100; i++) {
+			listofStrings.add(i);
+		}
+		List<String> nonEmptyList = filter(listofStrings, nonEmptyPredicate);
+
+		List<Integer> weightsIntegers = Arrays.asList(7, 3, 4, 10);
+
+		List<Apple> apples = map(weightsIntegers, Apple::new);
+		
+		System.out.println(apples);
+
+//		BiFunction<String, Integer, Apple> c3 = Apple::new;
+		// （color,weight）-> new Apple(color,weight);
+//		Apple c3 = c3.apply("green",110);
+
+
 	}
 
 	public static class Apple {
@@ -75,6 +102,11 @@ public class Sorting {
 		public Apple(Integer weight, String color) {
 			this.weight = weight;
 			this.color = color;
+		}
+
+		public Apple(Integer weight) {
+			this.weight = weight;
+
 		}
 
 		public Integer getWeight() {
@@ -105,4 +137,40 @@ public class Sorting {
 			return a1.getWeight().compareTo(a2.getWeight());
 		}
 	}
+
+	public static <T> List<T> filter(List<T> list, Predicate<T> p) {
+		List<T> resultList = new ArrayList<>();
+		for (Iterator iterator = resultList.iterator(); iterator.hasNext();) {
+			T t = (T) iterator.next();
+			if (p.test(t)) {
+				resultList.add(t);
+			}
+
+		}
+		return resultList;
+	}
+
+	public static List<Apple> map(List<Integer> list, Function<Integer, Apple> f) {
+		List<Apple> resultApples = new ArrayList<>();
+		for (Integer e : list) {
+			resultApples.add(f.apply(e));
+		}
+
+		return resultApples;
+	}
 }
+
+//static Map<String, Function<Integer,Fruit>> map = new HashMap<>();
+//static {
+//	  map.put("apple", Apple::new);
+//	  map.put("orange", Orange::new);
+//	  //etc...
+//	  
+//}
+//
+//
+//public static Fruit giveMeFruit(String fruit,Integer weight) {
+//	return map.get(fruit.toLowerCase())
+//			.apply(weight);
+//	
+//}

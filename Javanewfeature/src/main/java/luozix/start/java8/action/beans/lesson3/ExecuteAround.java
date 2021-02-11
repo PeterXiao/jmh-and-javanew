@@ -37,13 +37,15 @@ public class ExecuteAround {
 	}
 
 	public static String processFileLimited() throws IOException {
-		try (BufferedReader br = new BufferedReader(new FileReader("/lambdasinaction/data.txt"))) {
+
+		/// lambdasinaction/data.txt
+		try (BufferedReader br = new BufferedReader(new FileReader("runoob.txt"))) {
 			return br.readLine();
 		}
 	}
 
 	public static String processFile(BufferedReaderProcessor p) throws IOException {
-		try (BufferedReader br = new BufferedReader(new FileReader("/lambdasinaction/data.txt"))) {
+		try (BufferedReader br = new BufferedReader(new FileReader("runoob.txt"))) {
 			return p.process(br);
 		}
 
