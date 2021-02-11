@@ -7,6 +7,10 @@
 * @version V1.0  
 */
 package luozix.start.java8.action.beans.lesson01;
+
+import java.io.File;
+import java.util.Arrays;
+
 /**
 * @ClassName: FisrtClass
 * @Description: TODO(这里用一句话描述这个类的作用)
@@ -27,8 +31,12 @@ public class FisrtClass {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		@SuppressWarnings("unused")
+		double mydouble = 100.00d;
+		System.out.println(mydouble);
+		File[] hiddenFiles = new File(".").listFiles(File::isHidden);
 
-
+		System.out.println(Arrays.toString(hiddenFiles));
 	}
 
 //	Collections.sort(inventory, new Comparator<Apple>()){
