@@ -12,7 +12,7 @@
 	<name>java11_in_action</name>
 
 	<properties>
-		<!-- 11 -->
+		<!-- 8 9 11 -->
 		<java.version>15</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
@@ -249,6 +249,40 @@
 			<artifactId>parallel-collectors</artifactId>
 			<version>2.4.1</version>
 		</dependency>
+		<!-- Bean validator -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>7.0.1.Final</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator-annotation-processor -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator-annotation-processor</artifactId>
+			<version>7.0.1.Final</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator-test-utils -->
+<!-- 		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator-test-utils</artifactId>
+			<version>7.0.1.Final</version>
+			<scope>test</scope>
+		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator-cdi -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator-cdi</artifactId>
+			<version>7.0.1.Final</version>
+		</dependency>
+		<!-- EE Jakarta -->
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat/jakartaee-migration -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>jakartaee-migration</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
