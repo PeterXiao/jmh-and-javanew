@@ -38,6 +38,7 @@ public class NumericStreams{
         }
         System.out.println(max);
 
+		max = maxCalories.orElse(1);
         // numeric ranges
         IntStream evenNumbers = IntStream.rangeClosed(1, 100)
                                  .filter(n -> n % 2 == 0);
@@ -50,7 +51,16 @@ public class NumericStreams{
                                                .filter(b -> Math.sqrt(a*a + b*b) % 1 == 0).boxed()
                                                .map(b -> new int[]{a, b, (int) Math.sqrt(a * a + b * b)}));       
 
-        pythagoreanTriples.forEach(t -> System.out.println(t[0] + ", " + t[1] + ", " + t[2])); 
+//        pythagoreanTriples.forEach(t -> System.out.println(t[0] + ", " + t[1] + ", " + t[2])); 
+//        
+//        Stream<double[]> pythagoreanTriplesbetter =
+//                IntStream.rangeClosed(1, 100).boxed()
+//                         .flatMap(a -> IntStream.rangeClosed(a, 100)
+//                        		 .flatMap(a-> IntStream.rangeClosed(a, 100).mapToObj(b-> new double[] {a,b, Math.sqrt(a*a,b*b)})
+//                        				 .filter(t -> t[2] % 1 ==0));
+//             
+//        
+//        pythagoreanTriplesbetter.forEach(t -> System.out.println(t[0] + ", " + t[1] + ", " + t[2])); 
 
     }
    
