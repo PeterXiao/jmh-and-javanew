@@ -1,0 +1,13 @@
+*.iml
+*.iws
+*.ipr
+target
+.idea
+.svn
+.DS_Store
+.project
+.settings
+lib
+pkg
+.polyglot-cache
+.polyglot.pom.*
