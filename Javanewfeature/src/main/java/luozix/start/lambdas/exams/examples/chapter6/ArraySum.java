@@ -63,5 +63,8 @@ public int parallelArraySum() {
                  .sum();
 }
     // END parallel
+	private int addIntegers(List<Integer> values) {
+		return values.parallelStream().mapToInt(i -> i).sum();
+	}
     
 }

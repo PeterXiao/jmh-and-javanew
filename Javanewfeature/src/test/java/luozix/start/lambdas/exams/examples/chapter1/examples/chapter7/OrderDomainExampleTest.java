@@ -28,8 +28,24 @@ public class OrderDomainExampleTest {
     }
     // END can_count_albums
 
-    private Album newAlbum(String name) {
-        return new Album(name, emptyList(), emptyList());
-    }
+	private Album newAlbum(String name) {
+		return new Album(name, emptyList(), emptyList());
+	}
+
+//	public long countFeature(ToLongFunction<Album> function) {
+//		return albums.stream().mapToLong(function).sum();
+//	}
+//
+//	public long countTracks() {
+//		return countFeature(album -> album.getTracks().count());
+//	}
+//
+//	public long countRunningTime() {
+//		return countFeature(album -> album.getTracks().mapToLong(track -> track.getLength()).sum());
+//	}
+//
+//	public long countMusicians() {
+//		return countFeature(album -> album.getMusicians().count());
+//	}
 
 }

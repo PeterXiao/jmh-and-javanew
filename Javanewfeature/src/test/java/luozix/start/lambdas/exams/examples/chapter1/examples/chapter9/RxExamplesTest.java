@@ -13,10 +13,10 @@ public class RxExamplesTest {
     @Test
     public void filtersAlbums() throws InterruptedException {
         RxExamples examples = new RxExamples(SampleData.getThreeArtists());
-        Artist artist = examples.search("John", "UK", 5)
-                                .toBlockingObservable()
-                                .single();
+		Artist artist = examples.search("John", "UK", 5).toBlocking()
+				.single(); // .toBlockingObservable() 版本调整
 
+		System.out.println(artist);
         assertEquals(SampleData.johnLennon, artist);
     }
 

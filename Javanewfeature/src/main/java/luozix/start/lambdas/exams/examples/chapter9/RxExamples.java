@@ -2,6 +2,7 @@ package luozix.start.lambdas.exams.examples.chapter9;
 
 import static java.util.stream.Collectors.toList;
 
+import java.util.Arrays;
 import java.util.List;
 
 import luozix.start.lambdas.exams.examples.chapter1.Artist;
@@ -39,8 +40,10 @@ public class RxExamples {
 
 	private Observable<Artist> lookupArtist(String name) {
 		Artist required = savedArtists.stream().filter(artist -> artist.getName().equals(name)).findFirst().get();
-
-		return Observable.from(required);
+		return Observable.from(Arrays.asList(required));
+//		var required = savedArtists.stream().filter(artist -> artist.getName().equals(name)).collect(toList());
+//		
+//		return Observable.from(required);
 	}
 
 	// Purely for imported code sample
