@@ -94,3 +94,4 @@ surefire-reports
 /polyglot-java/scala/*.project
 /polyglot-java/xtend/*.classpath
 /polyglot-java/xtend/*.project
+/CollectionsBench

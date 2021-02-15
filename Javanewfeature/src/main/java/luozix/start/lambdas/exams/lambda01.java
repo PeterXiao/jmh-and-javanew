@@ -15,9 +15,10 @@
 * @version V1.0  
 */  
 	  
-	package luozix.start.lambdas;
+	package luozix.start.lambdas.exams;
 
 	import java.util.function.BinaryOperator;
+import java.util.function.Predicate;
 
 	/** 
 		 * ClassName:lambda01 <br/> 
@@ -60,9 +61,13 @@ public class lambda01 {
 			System.out.println(" ");
 			System.out.print(" world");
 		};
-
+		// lambda表达式引用的是值
 		BinaryOperator<Long> addBinaryOperator = (x, y) -> x + y;
 		BinaryOperator<Long> addEOperator = (Long x, Long y) -> x + y;
+
+		Predicate<Integer> atLestPredicate5 = x -> x > 5;
+		BinaryOperator<Long> addLongs = (x, y) -> x + y;
+
 	}
 
 }
