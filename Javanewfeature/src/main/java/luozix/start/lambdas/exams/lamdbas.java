@@ -17,24 +17,20 @@
 	  
 	package luozix.start.lambdas.exams;
 
+import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
+import static org.hamcrest.CoreMatchers.hasItem;
+import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 
-/** 
-	 * ClassName:lamdbas <br/> 
-	 * Function: TODO ADD FUNCTION. <br/> 
-	 * Reason:   TODO ADD REASON. <br/> 
-	 * Date:     2021年2月14日 下午5:02:56 <br/> 
-	 * @author   xiaoy 
-	 * @version   
-	 * @since    JDK 1.8
-	 * @see       
-	 */
+import org.junit.jupiter.api.Test;
 
 /**
 * @ClassName: lamdbas
@@ -58,5 +54,68 @@ public class lamdbas {
 				.collect(toList());
 		 
 		assertEquals(Arrays.asList("A", "B", "HELLO"), collectedstream);
+		List<Integer> numbers = asList(1, 2, 3, 4);
+
+		List<Integer> sameOrder = numbers.stream().collect(toList());
+		assertEquals(numbers, sameOrder);
+
+		Set<Integer> numbers1 = new HashSet<>(asList(4, 3, 2, 1));
+
+		List<Integer> sameOrder1 = numbers1.stream().collect(toList());
+
+		// 该断言有时会失败 assertEquals(asList(4, 3, 2, 1), sameOrder);
+		List<Artist> artists = new ArrayList<>();
+
+		// stream.collect(toCollection(TreeSet::new));
+
 	}
+
+	@Test
+	public void testStream() {
+		Set<Integer> numbers = new HashSet<>(asList(4, 3, 2, 1));
+
+		List<Integer> sameOrder = numbers.stream().sorted().collect(toList());
+
+		assertEquals(asList(1, 2, 3, 4), sameOrder);
+	}
+
+	@Test
+	public void tests()
+	{
+		List<Integer> numbers = asList(1, 2, 3, 4);
+
+		List<Integer> stillOrdered = numbers.stream().map(x -> x + 1).collect(toList());
+
+		// 顺序得到了保留 assertEquals(asList(2, 3, 4, 5), stillOrdered);
+
+		Set<Integer> unordered = new HashSet<>(numbers);
+
+		List<Integer> stillUnordered = unordered.stream().map(x -> x + 1).collect(toList());
+
+		// 顺序得不到保证
+		assertThat(stillUnordered, hasItem(2));
+		assertThat(stillUnordered, hasItem(3));
+		assertThat(stillUnordered, hasItem(4));
+		assertThat(stillUnordered, hasItem(5));
+
+	}
+
+//	public Optional<Artist> biggestGroup(Stream<Artist> artists) {
+//		Function<Artist, Long> getCount = artist -> artist.getMembers().count();
+//		return artists.collect(maxBy(comparing(getCount)));
+//	}
+//	public double averageNumberOfTracks(List<Album> albums) {
+//		return albums.stream().collect(averagingInt(album -> album.getTrackList().size()));
+//	}
+//	public Optional<Artist> biggestGroup(Stream<Artist> artists) {
+//		Function<Artist, Long> getCount = artist -> artist.getMembers().count();
+//		return artists.collect(maxBy(comparing(getCount)));
+//	}
+//
+//	public double averageNumberOfTracks(List<Album> albums) {
+//		return albums.stream().collect(averagingInt(album -> album.getTrackList().size()));
+//	}
+
+
+
 }
