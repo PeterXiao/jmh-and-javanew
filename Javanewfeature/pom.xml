@@ -375,7 +375,17 @@
 			<version>1.3.0.1</version>
 			<optional>true</optional>
 		</dependency>
-		
+
+		<!-- Pull in as a traditional dependency -->
+		<dependency>
+			<groupId>com.konghq</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>3.11.09</version>
+		</dependency>
+
+		<!-- OR as a snazzy new standalone jar with shaded dependencies -->
+		<!-- <dependency> <groupId>com.konghq</groupId> <artifactId>unirest-java</artifactId> 
+			<version>3.11.09</version> <classifier>standalone</classifier> </dependency> -->
 	</dependencies>
 
 	<build>

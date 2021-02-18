@@ -14,6 +14,6 @@ public class StringTest {
         System.out.println(" 1 ".strip().length());
         System.out.println(" ".isBlank());
         System.out.println("hello \n jackie\n good".lines().count());
-        System.out.println("repeat".repeat(3));
+		System.out.println("repeat".repeat(6));
     }
 }
