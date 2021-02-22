@@ -59,7 +59,7 @@ public class lamdbas {
 		List<Integer> sameOrder = numbers.stream().collect(toList());
 		assertEquals(numbers, sameOrder);
 
-		Set<Integer> numbers1 = new HashSet<>(asList(4, 3, 2, 1));
+		Set<Integer> numbers1 = new HashSet<>(asList(4, 3, 2, 1, 5));
 
 		List<Integer> sameOrder1 = numbers1.stream().collect(toList());
 
