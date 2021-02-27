@@ -10,10 +10,13 @@ import java.util.Base64;
  * @author xiaoy
  *
  */
+
 public class UrlEncoderExample {
+
 	public static void main(String[] args) {
 
 		String url = "http://github.com/wesleyegberto";
+
 		String encodedUrl = Base64.getUrlEncoder().encodeToString(url.getBytes(StandardCharsets.UTF_8));
 		System.out.println("encodedUrl = " + encodedUrl);
 
@@ -23,4 +26,5 @@ public class UrlEncoderExample {
 		final String decoded = new String(Base64.getDecoder().decode(encoded), StandardCharsets.UTF_8);
 		System.out.println(decoded);
 	}
+
 }

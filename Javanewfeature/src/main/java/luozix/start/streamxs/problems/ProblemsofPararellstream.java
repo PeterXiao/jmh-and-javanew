@@ -28,4 +28,7 @@ public class ProblemsofPararellstream {
 		long resfalut = LongStream.of(2, 53, 17, 21, 11, 42, 30).parallel().reduce(5, (acc, next) -> acc * next);
 		System.out.println(resfalut);
 	}
+	
+
+	
 }
