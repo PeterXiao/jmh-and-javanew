@@ -404,7 +404,12 @@
 			<artifactId>externalizor</artifactId>
 			<version>1.3.2</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>com.apifan.common</groupId>
+			<artifactId>common-random</artifactId>
+			<version>1.0.5</version>
+		</dependency>
 		
 		<!-- OR as a snazzy new standalone jar with shaded dependencies -->
 		<!-- <dependency> <groupId>com.konghq</groupId> <artifactId>unirest-java</artifactId> 
