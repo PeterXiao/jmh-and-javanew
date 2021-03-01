@@ -103,6 +103,15 @@
 			<version>${org.junit.jupiter}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.4.0</version>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -410,7 +419,26 @@
 			<artifactId>common-random</artifactId>
 			<version>1.0.5</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>io.github.karlatemp</groupId>
+			<artifactId>unsafe-accessor</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+		<!-- off heap -->
+		<!-- https://mvnrepository.com/artifact/org.mapdb/mapdb -->
+		<dependency>
+			<groupId>org.mapdb</groupId>
+			<artifactId>mapdb</artifactId>
+			<version>3.0.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.esotericsoftware</groupId>
+			<artifactId>reflectasm</artifactId>
+			<version>1.11.9</version>
+		</dependency>
+
+
 		<!-- OR as a snazzy new standalone jar with shaded dependencies -->
 		<!-- <dependency> <groupId>com.konghq</groupId> <artifactId>unirest-java</artifactId> 
 			<version>3.11.09</version> <classifier>standalone</classifier> </dependency> -->
