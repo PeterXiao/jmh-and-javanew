@@ -17,16 +17,22 @@
 	  
 	package luozix.start.reactive.async;
 
+	import java.util.concurrent.ExecutionException;
+	import java.util.concurrent.Future;
+	import java.util.concurrent.LinkedBlockingQueue;
+	import java.util.concurrent.ThreadPoolExecutor;
+	import java.util.concurrent.TimeUnit;
+
 	/** 
-		 * ClassName:AsyncThreadPoolExample <br/> 
-		 * Function: TODO ADD FUNCTION. <br/> 
-		 * Reason:   TODO ADD REASON. <br/> 
-		 * Date:     2021年3月2日 上午9:40:50 <br/> 
-		 * @author   xiaoy 
-		 * @version   
-		 * @since    JDK 1.8
-		 * @see       
-		 */
+			 * ClassName:AsyncThreadPoolExample <br/> 
+			 * Function: TODO ADD FUNCTION. <br/> 
+			 * Reason:   TODO ADD REASON. <br/> 
+			 * Date:     2021年3月2日 上午9:40:50 <br/> 
+			 * @author   xiaoy 
+			 * @version   
+			 * @since    JDK 1.8
+			 * @see       
+			 */
 
 /**
 * @ClassName: AsyncThreadPoolExample
@@ -38,29 +44,29 @@
 */
 public class AsyncThreadPoolExample {
 
-//	    public static String doSomethingA() {
-//
-//	        try {
-//	            Thread.sleep(2000);
-//	        } catch (InterruptedException e) {
-//	            e.printStackTrace();
-//	        }
-//	        System.out.println("--- doSomethingA---");
-//	        return "A Task Done";
-//	    }
-//
-//	    // 0自定义线程池
-//	    private final static int AVALIABLE_PROCESSORS = Runtime.getRuntime().availableProcessors();
-//	    private final static ThreadPoolExecutor POOL_EXECUTOR = new ThreadPoolExecutor(AVALIABLE_PROCESSORS,
-//	            AVALIABLE_PROCESSORS * 2, 1, TimeUnit.MINUTES, new LinkedBlockingQueue<>(5),
-//	            new NamedThreadFactory("ASYNC-POOL"), new ThreadPoolExecutor.CallerRunsPolicy());
-//
-//	    public static void main(String[] args) throws InterruptedException, ExecutionException {
-//
-//	        // 1.开启异步单元执行任务A
-//	        Future<?> resultA = POOL_EXECUTOR.submit(() -> doSomethingA());
-//
-//	        // 2.同步等待执行结果
-//	        System.out.println(resultA.get());
-//	    }
+	public static String doSomethingA() {
+
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("--- doSomethingA---");
+		return "A Task Done";
+	}
+
+	// 0自定义线程池
+	private final static int AVALIABLE_PROCESSORS = Runtime.getRuntime().availableProcessors();
+	private final static ThreadPoolExecutor POOL_EXECUTOR = new ThreadPoolExecutor(AVALIABLE_PROCESSORS,
+			AVALIABLE_PROCESSORS * 2, 1, TimeUnit.MINUTES, new LinkedBlockingQueue<>(5),
+			new NamedThreadFactory("ASYNC-POOL"), new ThreadPoolExecutor.CallerRunsPolicy());
+
+	public static void main(String[] args) throws InterruptedException, ExecutionException {
+
+		// 1.开启异步单元执行任务A
+		Future<?> resultA = POOL_EXECUTOR.submit(() -> doSomethingA());
+
+		// 2.同步等待执行结果
+		System.out.println(resultA.get());
+	}
 }
