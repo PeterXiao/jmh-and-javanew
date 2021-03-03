@@ -95,3 +95,4 @@ surefire-reports
 /polyglot-java/xtend/*.classpath
 /polyglot-java/xtend/*.project
 /CollectionsBench
+/Chronicle-Queue-Demo

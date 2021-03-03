@@ -507,7 +507,11 @@
 			<artifactId>unsafe-helper</artifactId>
 			<version>1.0</version>
 		</dependency>
-
+		<dependency>
+			<groupId>exchange.core2</groupId>
+			<artifactId>collections</artifactId>
+			<version>0.5.1</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
 		<dependency>
 			<groupId>org.hamcrest</groupId>

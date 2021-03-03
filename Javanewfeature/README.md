@@ -166,5 +166,6 @@ spring mvc 典型目录
 		</dependency> -->										
 			
 					
-		
+https://github.com/npgall/concurrent-trees.git
+https://en.wikipedia.org/wiki/Chaos_theory		
 
