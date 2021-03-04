@@ -1,6 +1,5 @@
 
-https://github.com/npgall/concurrent-trees.git
-https://en.wikipedia.org/wiki/Chaos_theory
+
 
 
 1.Presizing collections

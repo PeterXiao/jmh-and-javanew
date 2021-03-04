@@ -99,8 +99,8 @@ public class LargeMapTest {
     long freeMemory1 = Runtime.getRuntime().freeMemory();
     System.gc();
     System.out.println("time taken to add is : " + (t2 - t1));
-    System.out.println("initial Free Memory :" + freeMemory);
-    System.out.println("final Free Memory :" + freeMemory1);
-    System.out.println("total Memory :" + totalMemory);
+    System.out.println("initial Free Memory :" + freeMemory / (1024 * 1024) + " Mb");
+    System.out.println("final Free Memory :" + freeMemory1 / (1024 * 1024) + " Mb");
+    System.out.println("total Memory :" + totalMemory / (1024 * 1024) + " Mb");
   }
 }

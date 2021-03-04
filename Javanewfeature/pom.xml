@@ -474,6 +474,11 @@
 			<version>11.0.0.M1</version>
 			<scope>test</scope>
 		</dependency>
+<!-- 		<dependency>
+			<groupId>org.javolution</groupId>
+			<artifactId>javolution-core-java</artifactId>
+			<version>7.0.0</version>
+		</dependency> -->
 		<!-- https://mvnrepository.com/artifact/org.pcollections/pcollections -->
 		<dependency>
 			<groupId>org.pcollections</groupId>
