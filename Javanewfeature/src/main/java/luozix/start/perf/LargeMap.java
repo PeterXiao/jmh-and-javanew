@@ -22,10 +22,12 @@ package luozix.start.perf;
  * @see
  */
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 /**
  * @ClassName: LargeMap @Description: TODO(这里用一句话描述这个类的作用)
  *
@@ -35,6 +37,12 @@ import java.util.Random;
  * @since JDK 1.8
  */
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
+import it.unimi.dsi.fastutil.ints.IntLinkedOpenHashSet;
+import it.unimi.dsi.fastutil.ints.IntSet;
+import it.unimi.dsi.fastutil.ints.IntSets;
+import it.unimi.dsi.fastutil.longs.LongIterator;
+import it.unimi.dsi.fastutil.longs.LongLinkedOpenHashSet;
+import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 
@@ -98,4 +106,137 @@ public class LargeMap {
     System.out.println("final Free Memory :" + freeMemory1);
     System.out.println("total Memory :" + totalMemory);
   }
+  
+  /**
+   * Demonstrate standard JDK {@code ArrayList<Double>}
+   * with some JDK 8 functionality.
+   */  
+  public void demonstrateJdkArrayListForDoubles()  
+  {  
+     final ArrayList<Double> doubles = new ArrayList<>();  
+     doubles.add(15.5);  
+     doubles.add(24.4);  
+     doubles.add(36.3);  
+     doubles.add(67.6);  
+     doubles.add(10.0);  
+     System.out.println("JDK ArrayList<Double>:");  
+     System.out.println("\tDoubles List:" + doubles);  
+  }  
+
+  /**
+   * Demonstrate use of DoubleArrayList and show how
+   * similar using it is to using {@code ArrayList<Double>}.
+   */  
+  public void demonstrateFastUtilArrayListForDoubles()  
+  {  
+     // Demonstrate adding elements to DoubleArrayList is  
+     // exactly like adding elements to ArrayList<Double>.  
+     final DoubleArrayList doubles = new DoubleArrayList();  
+     doubles.add(15.5);  
+     doubles.add(24.4);  
+     doubles.add(36.3);  
+     doubles.add(67.6);  
+     doubles.add(10.0);  
+     System.out.println("FastUtil DoubleArrayList:");  // DoubleArrayList overrides toString()  
+     System.out.println("\tDoubles List:" + doubles);  
+  }
+  /**
+   * Demonstrate FastUtil's Double Stack.
+   *
+   * FastUtil's DoubleStack allows access to its
+   * contents via push, pop, and peek. It is declared
+   * as a DoubleArrayList type here so that the size()
+   * method is available without casting.
+   */  
+  public void demonstrateFastUtilDoubleStack()  
+  {  
+     final DoubleArrayList stack = new DoubleArrayList();  
+     stack.push(15.5);  
+     stack.push(17.3);  
+     stack.push(16.6);  
+     stack.push(2.2);  
+     System.out.println("FastUtil Stack of Doubles");  
+     System.out.println("\tPeek:" + stack.peek(0) +"; After Size:" + stack.size());  
+     System.out.println("\tPop: " + stack.pop() +"; After Size:" + stack.size());  
+     System.out.println("\tPeek:" + stack.peek(0) +"; After Size:" + stack.size());  
+  }
+  /**
+   * Demonstrate one of FastUtil's"equivalent"s of the
+   * java.util.Collections class. FastUtil separates its
+   * grouping of static methods into classes that are
+   * specific to the data type of the collection and to
+   * the data structure type of the collection.
+   */  
+  public void demonstrateFastUtilCollectionsClass()  
+  {  
+     final IntLinkedOpenHashSet integers = new IntLinkedOpenHashSet();  
+     integers.add(5);  
+     integers.add(7);  
+     integers.add(3);  
+     integers.add(1);  
+     final IntSet unmodifiableIntegers = IntSets.unmodifiable(integers);  
+     System.out.println("Unmodifiable Integers:");  
+     System.out.println("\tClass:" + unmodifiableIntegers.getClass().getCanonicalName());  
+     try  
+     {  
+        unmodifiableIntegers.add(15);  
+     }  
+     catch (Exception ex)  
+     {  
+         System.out.println("\tException caught:" + ex);  
+     }  
+  }
+  /**
+   * Demonstrate"traditional" Java iteration of a
+   * FastUtil collection.
+   */  
+  public void demonstrateIterationWithIterator()  
+  {  
+     final LongOpenHashSet longs = new LongOpenHashSet();  
+     longs.add(15);  
+     longs.add(6);  
+     longs.add(12);  
+     longs.add(13);  
+     longs.add(2);  
+     final LongIterator longIterator = longs.iterator();  
+     while (longIterator.hasNext())  
+     {  
+        final long longValue = longIterator.next();  
+        System.out.print(longValue +"");  
+     }  
+  }  
+
+  /**
+   * Demonstrate iteration of a FastUtil collection
+   * using Java's enhanced for-each approach.
+   */  
+  public void demonstrateIterationWithForEach()  
+  {  
+     final LongLinkedOpenHashSet longs = new LongLinkedOpenHashSet();  
+     longs.add(15);  
+     longs.add(6);  
+     longs.add(12);  
+     longs.add(13);  
+     longs.add(2);  
+     for (final long longValue : longs)  
+     {  
+         System.out.println(longValue +"");  
+     }  
+  }  
+
+  /**
+   * Demonstrate iteration of a FastUtil collection
+   * using JDK 8 .forEach approach.
+   */  
+  public void demonstrateIterationWithJdk8ForEach()  
+  {  
+     final LongLinkedOpenHashSet longs = new LongLinkedOpenHashSet();  
+     longs.add(15);  
+     longs.add(6);  
+     longs.add(12);  
+     longs.add(13);  
+     longs.add(2);  
+     longs.forEach(longValue -> System.out.print(longValue +""));  
+  } 
+  
 }
