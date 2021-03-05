@@ -525,13 +525,29 @@
 			<version>2.2</version>
 			<!-- <scope>test</scope> -->
 		</dependency>
+		<dependency>
+			<groupId>org.functionaljava</groupId>
+			<artifactId>functionaljava</artifactId>
+			<version>4.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.functionaljava</groupId>
+			<artifactId>functionaljava-java8</artifactId>
+			<version>4.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.functionaljava</groupId>
+			<artifactId>functionaljava-quickcheck</artifactId>
+			<version>4.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.functionaljava</groupId>
+			<artifactId>functionaljava-java-core</artifactId>
+			<version>4.8</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.openjdk.jol/jol-core -->
-<!-- 		<dependency>
-			<groupId>org.openjdk.jol</groupId>
-			<artifactId>jol-core</artifactId>
-			<version>0.12</version>
-			<scope>provided</scope>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.openjdk.jol</groupId> <artifactId>jol-core</artifactId> 
+			<version>0.12</version> <scope>provided</scope> </dependency> -->
 		<!-- https://mvnrepository.com/artifact/org.openjdk.jol/jol-core -->
 		<!-- <dependency> <groupId>org.openjdk.jol</groupId> <artifactId>jol-core</artifactId> 
 			<version>0.14</version> <scope>provided</scope> </dependency> -->

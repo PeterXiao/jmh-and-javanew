@@ -47,6 +47,7 @@ import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -811,7 +812,7 @@ public class EncryptUtil {
   public static String morseDecode(String morse, String splitSymbol) {
     StringBuffer stringBuffer = new StringBuffer();
     String[] morses = morse.split(splitSymbol);
-    // LogUtil.i(Arrays.toString(morses));
+    LogUtil.i(Arrays.toString(morses));
     Set<Map.Entry<Character, String>> keySet = sMorseMap.entrySet();
     for (String code : morses) {
       for (Map.Entry<Character, String> map : keySet) {

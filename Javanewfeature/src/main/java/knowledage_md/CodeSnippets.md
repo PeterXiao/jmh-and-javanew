@@ -168,9 +168,17 @@
 		
 	}
 
+ Const属性
+ 
+	private static final ${type} ${name} = new ${type}(${cursor});
+
+
 SLF4J
 
 	${:import(org.slf4j.Logger,org.slf4j.LoggerFactory)}
+		/**
+	 * Logging mechanism.
+	 */
 	private static final Logger LOG = LoggerFactory.getLogger(${enclosing_type}.class);
 	
 Log4J 2
@@ -199,6 +207,40 @@ read file
 	} catch (IOException e) {
 	    // ${todo}: handle exception
 	}	
+
+
+读取文件
+
+	${:import(java.io.BufferedReader,  
+	          java.io.FileNotFoundException,  
+	          java.io.FileReader,  
+	          java.io.IOException)}  
+	BufferedReader in = null;  
+	try {  
+	   in = new BufferedReader(new FileReader(${fileName}));  
+	   String line;  
+	   while ((line = in.readLine()) != null) {  
+	      ${cursor}  
+	   }  
+	}  
+	catch (FileNotFoundException e) {  
+	   // Handle exception
+	}  
+	catch (IOException e) {  
+	   // Handle exception
+	} finally {  
+	   if(in != null) in.close();  
+	}
+
+TestNG测试方法
+
+
+	${:import(org.testng.annotations.Test, org.testng.annotations.Parameters, org.testng.Assert)}
+	@Test(groups = "${name}")
+	public final void ${name}() {
+		${cursor}
+	}
+
 
 Message Format
 
@@ -229,6 +271,41 @@ Sigleton
 	${cursor}
 	
 	${type} ${newName} = ${type}.Singleton.INSTANCE.getSingleton();
+	
+	
+Sigleton 模式
+	
+		
+	/**
+	 * The shared instance.
+	 */
+	private static ${enclosing_type} instance = new ${enclosing_type}();
+	 
+	/**
+	 * Private constructor.
+	 */
+	private ${enclosing_type}() {
+	    super();
+	}
+	 
+	/**
+	 * Returns this shared instance.
+	 *
+	 * @returns The shared instance
+	 */
+	public static ${enclosing_type} getInstance() {
+	    return instance;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 Template:
 
