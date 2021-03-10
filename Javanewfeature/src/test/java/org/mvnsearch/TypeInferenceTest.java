@@ -1,6 +1,5 @@
 package org.mvnsearch;
 
-
 import org.junit.jupiter.api.Test;
 
 /**
@@ -9,12 +8,12 @@ import org.junit.jupiter.api.Test;
  * @author linux_china
  */
 public class TypeInferenceTest {
-    /**
-     * test variable inference
-     */
-    @Test
-    public void testVariableInference() {
-        var name = "Jackie";
-        System.out.println(name);
-    }
+  /** test variable inference */
+  @Test
+  public void testVariableInference() {
+
+    var name = "Jackie";
+
+    System.out.println(name);
+  }
 }
