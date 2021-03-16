@@ -32,7 +32,20 @@ package luozix.start.pattern.lambdasGofPattern.template;
  * @version
  * @since JDK 1.8
  */
-public class TemplateLambda {
+import java.util.function.Consumer;
 
-  public static void main(String[] args) {}
+public class TemplateLambda {
+  public static void withResource(Consumer<Resource> consumer) {
+    Resource resource = new Resource();
+    try {
+      consumer.accept(resource);
+    } finally {
+      resource.dispose();
+    }
+  }
+
+  public static void main(String[] args) {
+    withResource(resource -> resource.useResource());
+    withResource(resource -> resource.employResource());
+  }
 }

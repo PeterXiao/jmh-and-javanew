@@ -32,7 +32,35 @@ package luozix.start.pattern.lambdasGofPattern.chainofresponsibility;
  * @version
  * @since JDK 1.8
  */
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Stream;
+
 public class ChainOfRespLambda {
+
+  public static Optional<String> parseText(File file) {
+    return Optional.ofNullable(file)
+        .filter(f -> f.getType() == File.Type.TEXT)
+        .map(f -> "Text file: " + f.getContent());
+  }
+
+  public static Optional<String> parsePresentation(File file) {
+    return Optional.ofNullable(file)
+        .filter(f -> f.getType() == File.Type.PRESENTATION)
+        .map(f -> "Presentation file: " + f.getContent());
+  }
+
+  public static Optional<String> parseAudio(File file) {
+    return Optional.ofNullable(file)
+        .filter(f -> f.getType() == File.Type.AUDIO)
+        .map(f -> "Audio file: " + f.getContent());
+  }
+
+  public static Optional<String> parseVideo(File file) {
+    return Optional.ofNullable(file)
+        .filter(f -> f.getType() == File.Type.VIDEO)
+        .map(f -> "Video file: " + f.getContent());
+  }
 
   /**
    * @Title: main @Description: TODO(这里用一句话描述这个方法的作用)
@@ -45,7 +73,19 @@ public class ChainOfRespLambda {
    * @throws
    */
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
+    // File file = new File(File.Type.AUDIO, "Dream Theater  - The Astonishing");
     File file = new File(File.Type.AUDIO, "Dream Theater  - The Astonishing");
+
+    System.out.println(
+        Stream.<Function<File, Optional<String>>>of(
+                ChainOfRespLambda::parseText,
+                ChainOfRespLambda::parsePresentation,
+                ChainOfRespLambda::parseAudio,
+                ChainOfRespLambda::parseVideo)
+            .map(f -> f.apply(file))
+            .filter(Optional::isPresent)
+            .map(Optional::get)
+            .findFirst()
+            .orElseThrow(() -> new RuntimeException("Unknown file: " + file)));
   }
 }
