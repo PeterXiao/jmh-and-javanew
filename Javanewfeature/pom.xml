@@ -30,6 +30,7 @@
 		<springboot.version>2.4.3</springboot.version>
 		<org.junit.jupiter>5.7.1</org.junit.jupiter>
 		<assertj.version>3.19.0</assertj.version>
+		<eclipse-collection>11.0.0.M2</eclipse-collection>
 	</properties>
 
 	<dependencies>
@@ -474,25 +475,25 @@
 		<dependency>
 			<groupId>org.eclipse.collections</groupId>
 			<artifactId>eclipse-collections</artifactId>
-			<version>11.0.0.M1</version>
+			<version>${eclipse-collection}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.eclipse.collections/eclipse-collections-api -->
 		<dependency>
 			<groupId>org.eclipse.collections</groupId>
 			<artifactId>eclipse-collections-api</artifactId>
-			<version>11.0.0.M1</version>
+			<version>${eclipse-collection}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.eclipse.collections/eclipse-collections-testutils -->
 		<dependency>
 			<groupId>org.eclipse.collections</groupId>
 			<artifactId>eclipse-collections-testutils</artifactId>
-			<version>11.0.0.M1</version>
+			<version>${eclipse-collection}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.collections</groupId>
 			<artifactId>eclipse-collections-forkjoin</artifactId>
-			<version>11.0.0.M1</version>
+			<version>${eclipse-collection}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.javolution</groupId>
