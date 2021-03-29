@@ -37,6 +37,7 @@ import java.util.Collection;
  * @param <E> Object type that is to be inserted into the Bloom filter, e.g. String or Integer.
  * @author Magnus Skjegstad <magnus@skjegstad.com>
  */
+@SuppressWarnings("serial")
 public class BloomFilter<E> implements Serializable {
     private BitSet bitset;
     private int bitSetSize;
