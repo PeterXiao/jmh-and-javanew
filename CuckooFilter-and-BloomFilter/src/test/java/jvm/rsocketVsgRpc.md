@@ -75,3 +75,7 @@ gRPC windowupdate = 1 * 1024 * 1024 * 1024
 
 因此，基本上，HTTP / 2不能“真正地”响应，即使使用响应式实现，gRPC的性能也可以提高很多。
 
+
+https://download.eclipse.org/eclipse/updates/4.19-P-builds
+
+-XX:+UnlockExperimentalVMOptions -XX:+UseJVMCICompiler
