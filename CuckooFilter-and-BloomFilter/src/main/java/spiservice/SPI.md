@@ -1,8 +1,11 @@
 一、SPI是什么
+
 SPI是相对API而言的。
 API指的是应用对服务调用方提供的接口，用于提供某种服务、功能，面向的是服务调用方。
 SPI指的是应用对服务实现方提供的接口，用于实现某种服务、功能，面向的是服务实现方
+
 二、SPI机制
+
 SPI(Service Provider Interface)是JDK内置的一种服务提供发现机制。
 在平时开发中我们其实已经接触到，只不过一般开发真的用不上，像jdbc、apache logging等都用到SPI机制
 这些SPI的接口是由Java核心库来提供，而SPI的实现则是作为Java应用所依赖的jar包被包含进类路径（CLASSPATH）中。例如：JDBC的实现mysql就是通过maven被依赖进来。
