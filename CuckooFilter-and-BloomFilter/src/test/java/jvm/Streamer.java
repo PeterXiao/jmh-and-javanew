@@ -12,7 +12,7 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
 
  public class Streamer {
-     private static final int LOOP_COUNT = 2000;
+     private static final int LOOP_COUNT = 20; //2000
 
      public static void main(String[] args) {
          try {
