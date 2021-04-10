@@ -21,8 +21,13 @@ public class ConTest {
         String s3 = s2.intern();
         System.err.println(s1==s2);
         System.err.println(s2==s3);
+        
+        
+        System.err.println("*********************************************");
+        
         System.err.println(s1==s3);
         
+        System.err.println("*********************************************");
         StringBuilder sb = new StringBuilder();
         sb.append("llo");
         String s4 = sb.toString().intern();
@@ -34,9 +39,15 @@ public class ConTest {
         Integer a1 = 128;
         Integer b1 = 128;
 
-        Integer a2 = new Integer(127);
-        Integer b2 = new Integer(127);
+        @SuppressWarnings("deprecation")
+		Integer a2 = new Integer(127);
+        @SuppressWarnings("deprecation")
+		Integer b2 = new Integer(127);
         System.err.println(a==b);
+        
+        System.err.println("*********************************************");
+        
+        
         System.err.println(a1==b1);
         System.err.println(a2==b2);
 

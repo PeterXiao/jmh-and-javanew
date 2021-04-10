@@ -18,7 +18,8 @@ public class StreamTest {
     /**
      * @param args
      */
-    public static void main(String[] args) {
+    @SuppressWarnings("unchecked")
+	public static void main(String[] args) {
         // TODO Auto-generated method stub
         //1.创建list
         List<Integer> personList = new ArrayList<Integer>();
@@ -54,6 +55,15 @@ public class StreamTest {
         flux.buffer(20).subscribe(integers -> {
             System.out.println(JSON.toJSONString("integers" + integers));
         });
+        
+        
+/*        try (FileOutputStream out = new FileOutputStream(filePathName)) { 
+            out.write(pointer.getByteArray(0, length), 0, length);
+        } catch (Exception e) { 
+            System.out.printf("保存文件[%s]失败%n", filePathName);
+        }
+*/
+
     }
 
 }
