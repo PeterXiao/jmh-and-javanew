@@ -22,6 +22,7 @@ public class CoJava8Actions {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//new Thread(()->{System.out.println(123)});
+		System.out.println(" 123 s");
 	}
 
 }
