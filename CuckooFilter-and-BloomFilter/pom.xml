@@ -56,10 +56,13 @@
 			<version>2.6.5</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<!-- <dependency> <groupId>org.json</groupId> <artifactId>json</artifactId> 
+			<version>20200518</version> </dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20200518</version>
+			<version>20210307</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
 		<dependency>
@@ -88,6 +91,13 @@
 			<artifactId>java-concurrent-hash-trie-map</artifactId>
 			<version>0.2.23</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.eclipse.collections/eclipse-collections-parent -->
+		<dependency>
+			<groupId>org.eclipse.collections</groupId>
+			<artifactId>eclipse-collections-parent</artifactId>
+			<version>11.0.0.M2</version>
+			<type>pom</type>
+		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.collections</groupId>
@@ -109,11 +119,12 @@
 		<dependency>
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-core</artifactId>
-
+			<version>3.4.4</version>
 		</dependency>
 		<dependency>
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-test</artifactId>
+			<version>3.4.4</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -142,12 +153,13 @@
 			<artifactId>jitwatch</artifactId>
 			<version>1.1.5</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<!-- https://mvnrepository.com/artifact/net.minidev/json-smart -->
 		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20200518</version>
+			<groupId>net.minidev</groupId>
+			<artifactId>json-smart</artifactId>
+			<version>2.4.2</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -184,8 +196,23 @@
 		<dependency>
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-all</artifactId>
-			<version>5.6.2</version>
+			<version>5.6.3</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>2.4.4</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/jakarta.json.bind/jakarta.json.bind-api -->
+		<dependency>
+			<groupId>jakarta.json.bind</groupId>
+			<artifactId>jakarta.json.bind-api</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+
 
 	</dependencies>
 	<build>
