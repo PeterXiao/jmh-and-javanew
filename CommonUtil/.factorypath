@@ -19,7 +19,6 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/com/alibaba/fastjson/1.2.68/fastjson-1.2.68.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.8.5/jackson-core-2.8.5.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.8.5/jackson-annotations-2.8.5.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/commons/commons-lang3/3.6/commons-lang3-3.6.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/dyuproject/protostuff/protostuff-core/1.0.12/protostuff-core-1.0.12.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/dyuproject/protostuff/protostuff-api/1.0.12/protostuff-api-1.0.12.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/dyuproject/protostuff/protostuff-runtime/1.0.12/protostuff-runtime-1.0.12.jar" enabled="true" runInBatchMode="false"/>

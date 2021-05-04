@@ -131,3 +131,16 @@ public ResponseEntity<String> sendTemplateMail() {
 本文的完整代码在 https://github.com/wupeixuan/SpringBoot-Learn 的 mail 目录下。
 
 Spring Boot 集成邮件发送还是比较简单的，大家可以下载项目源码，自己在本地运行调试这个项目，更好地理解如何在 Spring Boot 中开发邮件服务。
+
+
+
+
+
+
+
+
+Spring Tools 3 Add-On for Spring Tools 4
+
+Attention: This add-on pack provides additional components from the previous Spring Tools 3 generation to be installed into an Eclipse with Spring Tools 4 already installed. To avoid installation issues with overlapping features, this will NOT install everything from the previous Spring Tool Suite 3 into a plain Eclipse. If you want to purely install all the STS3 components into a plain Eclipse, please use the specific marketplace "Spring Tools 3 (Standalone Edition)" entry for that.
+
+The Spring Tools 3 contain the previous generation Spring tooling for Eclipse, mostly focused on working with Spring apps configured using XML and providing validation support for various additional Spring projects, like Spring AOP, Spring Webflow, Spring Integration, etc. This can be installed as an add-on into the Spring Tools 4 for Eclipse as well as into a plain Eclipse installation, if you still have projects that are not migrated to Spring Boot and/or you would like to continue to use features of the previous Spring tooling generation that aren't yet been part of the all-new Spring Tools 4.
