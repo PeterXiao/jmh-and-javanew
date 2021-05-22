@@ -21,6 +21,7 @@ package spiservice;
  * @since JDK 1.8
  * @see
  */
+import java.util.function.Function;
 
 /**
  * @ClassName: Main @Description: TODO(这里用一句话描述这个类的作用)
@@ -76,5 +77,19 @@ public class Main extends ClassLoader implements Opcodes {
     // 将class文件载入系统，通过反射调用`main()`方法，输出结果
     Class<?> mainClass = m.defineClass("Example", code, 0, code.length);
     mainClass.getMethods()[0].invoke(null, new Object[] {null});
+
+    Function<String, Integer> toNumber = Integer::parseInt;
+    System.out.println("To number: " + toNumber.apply("234"));
+    Function<String, String> upperCase = String::toUpperCase;
+    Function<String, String> trim = String::trim;
+    Function<String, String> searchEngine = upperCase.andThen(trim);
+    System.out.println("Search result: " + searchEngine.apply("   test one two   "));
+
+    //    Value value = Value.of(12);
+    //    String string = value.get(String.class);
+    //    List<Integer> list = value.get(new TypeReference<List<Integer>>() {});
+    //    Set<Long> set = value.get(new TypeReference<Set<Long>>() {});
+    //    Stream<Integer> stream = value.get(new TypeReference<Stream<Integer>>() {});
+    //    Object integer = value.get();
   }
 }

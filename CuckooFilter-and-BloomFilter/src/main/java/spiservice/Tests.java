@@ -3,7 +3,7 @@ package spiservice;
 import java.util.Iterator;
 import java.util.ServiceLoader;
 
-public class Test {
+public class Tests {
     public static void main(String[] args) {
         ServiceLoader<Fruit> s = ServiceLoader.load(Fruit.class);
         Iterator<Fruit> it = s.iterator();
