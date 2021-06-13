@@ -31,8 +31,9 @@
 		<dependency>
 			<groupId>com.carrotsearch</groupId>
 			<artifactId>hppc</artifactId>
-			<version>0.8.2</version>
+			<version>0.9.0</version>
 		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/com.carrotsearch.randomizedtesting/randomizedtesting-runner -->
 		<dependency>
 			<groupId>com.carrotsearch.randomizedtesting</groupId>
@@ -274,6 +275,12 @@
 		    <groupId>org.smartboot.socket</groupId>
 		    <artifactId>aio-core</artifactId>
 		    <version>1.5.7</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.pcollections/pcollections -->
+		<dependency>
+		    <groupId>org.pcollections</groupId>
+		    <artifactId>pcollections</artifactId>
+		    <version>3.1.4</version>
 		</dependency>
 
 

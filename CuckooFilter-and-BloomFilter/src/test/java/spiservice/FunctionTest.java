@@ -11,7 +11,11 @@
  */
 package spiservice;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * ClassName:FunctionTest <br>
@@ -51,6 +55,21 @@ public class FunctionTest {
     // lambda表达式实现了apply，也就实现了Function接口,不要被<Integer, Integer>影响了
     System.out.println(test.operate(5, integer -> integer * integer)); // 第二个参数是方法
     // 输入参数的类型//返回类型
+
+    String multilineString = "Baeldung helps \n \n developers \n explore Java.";
+    List<String> lines =
+        multilineString
+            .lines()
+            .filter(line -> !line.isBlank())
+            .map(String::strip)
+            .collect(Collectors.toList());
+    assertThat(lines).containsExactly("Baeldung helps", "developers", "explore Java.");
+
+    //    Path filePath = Files.writeString(Files.createTempFile(tempDir, "demo", ".txt"), "Sample
+    // text");
+    //    String fileContent = Files.readString(filePath);
+    //    assertThat(fileContent).isEqualTo("Sample text");
+
   }
 
   public int operate(int i, Function<Integer, Integer> function) {
