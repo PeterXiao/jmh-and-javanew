@@ -115,3 +115,33 @@ public class Ingredient {
 </plugin>
 
 
+#!/bin/bash
+
+BASE_DIR=$HOME/Projects/focus
+BUILD_DIR=$BASE_DIR/Builds
+FOCUS_ARCHIVE=$BUILD_DIR/Focus.xcarchive
+FOCUS_APP=$BUILD_DIR/Focus.app
+
+echo "Building Focus..."
+
+echo "Cleaning up old archive & app..."
+rm -rf $FOCUS_ARCHIVE $FOCUS_APP
+
+echo "Building archive..."
+xcodebuild -workspace $BASE_DIR/Focus.xcworkspace -config Release -scheme Focus -archivePath $FOCUS_ARCHIVE archive
+
+echo "Exporting archive..."
+xcodebuild -archivePath $FOCUS_ARCHIVE -exportArchive -exportPath $FOCUS_APP -exportFormat app
+
+echo "Cleaning up archive..."
+rm -rf $FOCUS_ARCHIVE
+
+echo "Done"
+
+
+
+
+
+
+
+

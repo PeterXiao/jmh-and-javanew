@@ -91,5 +91,14 @@ public class Main extends ClassLoader implements Opcodes {
     //    Set<Long> set = value.get(new TypeReference<Set<Long>>() {});
     //    Stream<Integer> stream = value.get(new TypeReference<Stream<Integer>>() {});
     //    Object integer = value.get();
+
+    String s = "\t abc \n";
+    System.out.println("abc".equals(s.trim())); // true
+    System.out.println("abc".equals(s.trim())); // true
+    Character c = '\u2000';
+    String s1 = c + "abc" + c;
+    System.out.println(Character.isWhitespace(c)); // true
+    System.out.println(s1.equals(s1.trim())); // true
+    System.out.println("abc".equals(s1.strip())); // true
   }
 }

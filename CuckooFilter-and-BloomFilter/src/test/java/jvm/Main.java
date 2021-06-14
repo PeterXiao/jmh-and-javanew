@@ -70,5 +70,28 @@ public class Main {
     System.out.println("  ".isBlank()); // true
 
     System.out.println("".isBlank()); // true
+
+    //    HttpClient client = HttpClient.newBuilder()
+    //        .version(Version.HTTP_1_1)
+    //        .followRedirects(Redirect.NORMAL)
+    //        .connectTimeout(Duration.ofSeconds(20))
+    //        .proxy(ProxySelector.of(new InetSocketAddress("proxy.example.com", 80)))
+    //        .authenticator(Authenticator.getDefault())
+    //        .build();
+    //   HttpRequest request;
+    // HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+    //   System.out.println(response.statusCode());
+    //   System.out.println(response.body());
+
+    //   HttpRequest request = HttpRequest.newBuilder()
+    //       .uri(URI.create("https://foo.com/"))
+    //       .timeout(Duration.ofMinutes(2))
+    //       .header("Content-Type", "application/json")
+    //       .POST(BodyPublishers.ofFile(Paths.get("file.json")))
+    //       .build();
+    //  client.sendAsync(request, BodyHandlers.ofString())
+    //       .thenApply(HttpResponse::body)
+    //       .thenAccept(System.out::println);
+
   }
 }
