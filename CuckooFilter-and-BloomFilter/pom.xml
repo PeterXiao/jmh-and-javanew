@@ -207,13 +207,13 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>5.3.8</version>
+			<version>5.3.9</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
 		<dependency>
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-all</artifactId>
-			<version>5.6.7</version>
+			<version>5.7.4</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
 		<dependency>
@@ -270,12 +270,12 @@
 		<dependency>
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>
-			<version>4.0.3</version>
+			<version>5.0.0</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.smartboot.socket</groupId>
 		    <artifactId>aio-core</artifactId>
-		    <version>1.5.9</version>
+		    <version>1.5.10</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.pcollections/pcollections -->
 		<dependency>
@@ -287,20 +287,20 @@
 		<dependency>
 		    <groupId>io.netty</groupId>
 		    <artifactId>netty-all</artifactId>
-		    <version>4.1.65.Final</version>
+		    <version>4.1.66.Final</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.netty.incubator/netty-incubator-codec-http3 -->
 <!--		<dependency>
 		    <groupId>io.netty.incubator</groupId>
 		    <artifactId>netty-incubator-codec-http3</artifactId>
 		    <version>0.0.4.Final</version>
-		</dependency>
+		</dependency> -->
  		<dependency>
 		    <groupId>io.netty.incubator</groupId>
 		    <artifactId>netty-incubator-codec-quic</artifactId>
 		    <version>0.0.10.Final</version>
 		    <classifier>windows-x86_64</classifier>
-		</dependency> -->
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
 		<dependency>
 		    <groupId>org.jsoup</groupId>

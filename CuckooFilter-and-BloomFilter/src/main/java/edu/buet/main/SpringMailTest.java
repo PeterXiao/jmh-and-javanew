@@ -30,7 +30,8 @@ package edu.buet.main;
  * @version
  * @since JDK 1.8
  */
-public class SpringMailTest {}
+public class SpringMailTest {
+}
 
 // @RunWith(SpringJUnit4ClassRunner.class)
 // @SpringApplicationConfiguration(WebMain.class)
