@@ -162,7 +162,7 @@
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-io</artifactId>
-			<version>9.4.13.v20181111</version>
+			<version>10.0.2</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.mozilla/rhino -->
 		<dependency>
